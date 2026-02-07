@@ -1,0 +1,900 @@
+:root{
+  --beige:#efdfbb;
+  --light-pink:#f4e9cf;
+  --rose-gold:#722f37;
+  --blush:#a55f6b;
+  --text-dark:#471e23;
+  --white:#fff;
+  --shadow: rgba(114,47,55,0.18);
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-body: 'Cormorant', 'Poppins', serif;
+  --font-accent: 'Marcellus', serif;
+  --gold: #d4af37;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: var(--font-body);
+  color:var(--text-dark);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  position: relative;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Add these font imports at the top of your HTML head section */
+/*
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cormorant:wght@300;400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+*/
+
+h1,h2,h3,h4{
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Premium Typography Enhancements */
+.hero h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 3.5rem;
+  letter-spacing: 0.05em;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+}
+
+.nav a {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.card h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+.product-info h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: 0.03em;
+}
+
+.why h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.2rem;
+  letter-spacing: 0.03em;
+}
+
+/* PREMIUM ANIMATED BACKGROUNDS */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0.7;
+}
+
+/* Homepage - Gentle Gold Particles */
+body[data-page="home"]::before {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(239, 223, 187, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(244, 233, 207, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #fffcf6 0%, #f4e9cf 100%);
+  animation: gentlePulse 8s ease-in-out infinite alternate;
+}
+
+/* Products Page - Diamond Sparkle Effect */
+body[data-page="products"]::before {
+  background: 
+    linear-gradient(125deg, #fffcf6 0%, #f8f2e4 50%, #fffcf6 100%);
+  position: fixed;
+}
+
+body[data-page="products"]::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 2px, transparent 0),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.6) 1px, transparent 0),
+    radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.7) 1.5px, transparent 0),
+    radial-gradient(circle at 10% 50%, rgba(255, 255, 255, 0.5) 1px, transparent 0),
+    radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.9) 2px, transparent 0);
+  background-size: 300px 300px, 200px 200px, 250px 250px, 180px 180px, 350px 350px;
+  animation: sparkleMove 20s linear infinite;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Product Detail - Luxury Focus Beam */
+body[data-page="product-detail"]::before {
+  background: 
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(244, 233, 207, 0.7) 100%),
+    radial-gradient(ellipse at 30% 70%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(114, 47, 55, 0.1) 0%, transparent 50%);
+  animation: softBeam 12s ease-in-out infinite alternate;
+}
+
+/* Contact Page - Elegant Silk Weave */
+body[data-page="contact"]::before {
+  background: 
+    linear-gradient(135deg, #fffcf6 0%, #f4e9cf 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.03) 10px, rgba(212, 175, 55, 0.03) 20px);
+  animation: silkWeave 15s linear infinite;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes gentlePulse {
+  0% {
+    background-position: 0% 0%;
+    filter: brightness(1);
+  }
+  100% {
+    background-position: 100% 100%;
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes sparkleMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 300px 300px, 200px 200px, 250px 250px, 180px 180px, 350px 350px;
+  }
+}
+
+@keyframes softBeam {
+  0%, 100% {
+    background-size: 100% 100%, 200% 200%, 200% 200%;
+    background-position: center center, 30% 70%, 70% 30%;
+  }
+  50% {
+    background-size: 100% 100%, 250% 250%, 250% 250%;
+    background-position: center center, 35% 65%, 65% 35%;
+  }
+}
+
+@keyframes silkWeave {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 20px 20px;
+  }
+}
+
+/* Floating Elements Animation */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.floating-element {
+  position: absolute;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+}
+
+.floating-element:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+  animation-duration: 20s;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+}
+
+.floating-element:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  left: 80%;
+  animation-duration: 25s;
+  animation-delay: -5s;
+  background: radial-gradient(circle, rgba(114, 47, 55, 0.1) 0%, transparent 70%);
+}
+
+.floating-element:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  top: 80%;
+  left: 20%;
+  animation-duration: 18s;
+  animation-delay: -10s;
+  background: radial-gradient(circle, rgba(239, 223, 187, 0.2) 0%, transparent 70%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(20px, 40px) rotate(90deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(40px, 0) rotate(180deg);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(20px, -40px) rotate(270deg);
+    opacity: 0.5;
+  }
+}
+
+/* Premium Glass Morphism Effect for Cards */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(114, 47, 55, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Premium Button Enhancements */
+.liquid-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--rose-gold), var(--blush));
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 
+    0 10px 30px rgba(114, 47, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.liquid-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s ease;
+}
+
+.liquid-btn:hover::before {
+  left: 100%;
+}
+
+.liquid-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 35px rgba(114, 47, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Header Glass Effect */
+.header {
+  background: rgba(239, 223, 187, 0.85) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(239, 223, 187, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--rose-gold), var(--blush));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--blush), var(--rose-gold));
+}
+
+/* Text Shine Effect */
+.hero h2 {
+  background: linear-gradient(135deg, var(--rose-gold) 0%, var(--blush) 50%, var(--text-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.hero h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: textShine 3s ease-in-out infinite;
+}
+
+@keyframes textShine {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Rest of your existing CSS remains the same below */
+
+.header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 36px;
+  position:sticky;top:0;z-index:50;box-shadow:0 6px 16px var(--shadow);
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:60px;height:60px;border-radius:50%;border:2px solid var(--rose-gold);object-fit:cover;animation:rotate 8s linear infinite}
+.brand-text{height:40px;display:block}
+.nav{display:flex;gap:26px;align-items:center}
+.nav a{color:var(--rose-gold);text-decoration:none;font-weight:600;padding:6px 6px;position:relative;display: flex; align-items: center; gap: 8px;}
+.nav a.active{color:var(--text-dark)}
+.nav a::before{content:"";position:absolute;left:50%;bottom:0;height:2px;width:0;background:linear-gradient(90deg,var(--rose-gold),var(--blush));transform:translateX(-50%);transition:width 0.35s}
+.nav a:hover::before,.nav a.active::before{width:100%}
+
+@keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* Hero */
+.hero{height:60vh;display:grid;place-items:center;text-align:center;padding:30px}
+.hero p{margin-top:12px;color:#724e52}
+
+/* Sections */
+.section{padding:60px 20px;text-align:center}
+.section h2{color:var(--rose-gold);font-size:34px;margin-bottom:8px}
+.section p{color:#724e52;margin-bottom:24px}
+
+/* Grid products */
+.grid-products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;align-items:start;padding:18px}
+.card img{width:100%;height:230px;object-fit:cover;border-bottom:1px solid rgba(0,0,0,0.04)}
+.card h4{color:var(--rose-gold);margin:14px 0 6px}
+.card p{color:#724e52;margin-bottom:8px}
+
+/* Scroll gallery */
+.scroll-gallery{overflow:hidden;white-space:nowrap;padding:28px;background:linear-gradient(180deg,var(--light-pink),var(--beige))}
+.scroll-track{display:inline-flex;gap:16px;animation:scroll 40s linear infinite}
+.scroll-track img{width:220px;height:220px;object-fit:cover;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Product detail layout */
+.page-wrap{max-width:1100px;margin:30px auto;padding:0 20px}
+.product-detail{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,0.6);border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+.product-detail img{width:320px;height:320px;object-fit:cover;border-radius:16px}
+.product-info{max-width:520px;text-align:center}
+.product-info h2{font-size:34px;color:var(--rose-gold);margin-bottom:8px}
+.price{color:#634646;margin-bottom:14px}
+.desc{color:#6b514f;margin-bottom:20px}
+.btns{display:flex;gap:18px;justify-content:center}
+
+/* Recommended slider */
+.recommended{padding:28px}
+.slider{display:flex;gap:18px;overflow-x:auto;padding-bottom:8px}
+.rec-card{min-width:160px;text-align:center;background:var(--white);padding:8px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);text-decoration:none;color:inherit}
+.rec-card img{width:140px;height:120px;object-fit:cover;border-radius:10px}
+.rec-card p{font-size:14px;color:var(--rose-gold);margin-top:8px}
+.rec-card span{display:block;color:#6b514f;font-size:13px;margin-top:6px}
+
+/* Why and footer */
+.why{background:linear-gradient(145deg,var(--beige),var(--light-pink));padding:40px;border-radius:16px;margin:40px auto;box-shadow:0 8px 22px rgba(114,47,55,0.08);max-width:1100px}
+footer{background:var(--light-pink);padding:20px;text-align:center;color:#724e52;margin-top:28px}
+
+/* WhatsApp floating */
+.whatsapp{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:linear-gradient(180deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;z-index:60}
+.whatsapp a{color:white;font-size:22px;text-decoration:none}
+
+/* Intro Animation */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f3e8d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.8s ease forwards;
+  animation-delay: 2.2s;
+}
+
+#brand-intro {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  letter-spacing: 8px;
+  color: #692b2b;
+  display: flex;
+}
+
+#brand-intro span {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: rise 0.5s ease forwards;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.logo.revealed {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.logo {
+  opacity: 0;
+}
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+.grid-products img,
+#p-image {
+  transition: transform 0.4s ease;
+}
+
+.grid-products img:hover,
+#p-image:hover {
+  transform: scale(1.05);
+}
+
+.fade-slide {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card img {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0,
+    rgba(255,255,255,0.35) 50,
+    transparent 100
+  );
+  transform: skewX(-20deg);
+  transition: 0.7s;
+}
+
+.card:hover img::after {
+  left: 120%;
+}
+
+/* --- CONTACT PAGE STYLES --- */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split screen */
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Info Styling */
+.info-item { margin-bottom: 30px; }
+.info-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+.info-item p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+/* Luxury Form Styling */
+.lux-form .form-group { margin-bottom: 25px; position: relative; }
+.lux-form label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #999;
+}
+
+.lux-form input, 
+.lux-form textarea {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid #ddd; /* Minimalist underline style */
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.lux-form input:focus, 
+.lux-form textarea:focus {
+  border-bottom-color: var(--gold); /* Gold line on focus */
+}
+
+/* The Animated Line */
+.focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.lux-form input:focus ~ .focus-border,
+.lux-form textarea:focus ~ .focus-border {
+  width: 100%;
+  left: 0;
+}
+
+/* THE "MAGNETIC" INFO CARDS */
+.info-item {
+    padding: 20px;
+    border: 1px solid transparent; /* Invisible border */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 8px;
+    cursor: default;
+}
+
+.info-item:hover {
+    background: #fff;
+    border-color: rgba(212, 175, 55, 0.2); /* Faint gold border */
+    transform: translateY(-5px); /* Gentle Lift */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.info-item:hover i {
+    transform: scale(1.2); /* Icon grows */
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); /* Gold Glow */
+    transition: all 0.4s ease;
+}
+
+/* THE "SPACING" BUTTON EFFECT */
+.btn-lux {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    padding: 12px 24px;
+    background: var(--rose-gold);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.btn-lux:hover {
+    letter-spacing: 3px; /* Text expands elegantly */
+    background: #000 !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* FORCE PIC 1 HEADER STYLE */
+#main-header {
+  background: rgba(239, 223, 187, 0.98) !important; /* The Beige Color */
+  box-shadow: 0 4px 12px rgba(114, 47, 55, 0.15) !important;
+  padding: 15px 30px !important;
+  mix-blend-mode: normal !important; /* Removes the transparent filter */
+  height: auto !important;
+}
+
+/* Fix the Logo Area */
+#main-header .logo {
+  gap: 15px !important;
+}
+
+#main-header .brand {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#main-header .brand-text {
+  height: 35px !important;
+  width: auto !important;
+  display: block !important;
+  filter: none !important;
+  font-family: var(--font-heading) !important;
+  font-size: 0 !important; /* Hides text if it's an image, shows img */
+}
+
+/* Show the Tagline */
+#main-header .brand p {
+  display: block !important;
+  font-size: 0.75rem !important;
+  color: #722f37 !important; /* Rose Gold */
+  letter-spacing: 1px !important;
+  margin-top: 2px !important;
+  font-family: var(--font-body) !important;
+  text-transform: none !important;
+}
+
+/* Fix the Navigation Links */
+#main-header .nav a {
+  color: #722f37 !important; /* Rose Gold Text */
+  font-family: var(--font-accent) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  text-transform: capitalize !important; /* Not uppercase */
+  letter-spacing: normal !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#main-header .nav a i {
+  font-size: 1.1rem;
+}
+
+#main-header .nav a:hover {
+  color: #471e23 !important; /* Darker on hover */
+}
+
+/* Mobile Responsiveness */
+@media(max-width:900px){
+  .product-detail{flex-direction:column}
+  .product-detail img{width:260px;height:260px}
+  .grid-products{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  #main-header .brand p { display: none !important; } /* Hide tagline on phone */
+  #main-header .brand-text { height: 25px !important; }
+  #main-header { padding: 15px !important; }
+  
+  /* Reduce animation intensity on mobile */
+  body::before, body::after {
+    animation-duration: 30s !important;
+  }
+  
+  .floating-elements {
+    display: none; /* Hide floating elements on mobile for performance */
+  }
+}
+/* ===== PREMIUM BORDER STYLES FOR JEWELRY IMAGES ===== */
+.card img,
+#p-image,
+.scroll-track img,
+.rec-card img {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Main Premium Border Effect - EXCLUDE SCROLL GALLERY */
+.card img::before,
+#p-image::before,
+.rec-card img::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--rose-gold), 
+        var(--blush), 
+        var(--rose-gold), 
+        var(--text-dark), 
+        var(--rose-gold));
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+/* Double Border Effect - EXCLUDE SCROLL GALLERY */
+.card img::after,
+#p-image::after,
+.rec-card img::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid rgba(114, 47, 55, 0.3); /* rose-gold with opacity */
+    border-radius: 16px;
+    z-index: -2;
+    opacity: 0.6;
+}
+
+/* Hover Effects - EXCLUDE SCROLL GALLERY */
+.card:hover img::before,
+#p-image:hover::before,
+.rec-card:hover img::before {
+    opacity: 1;
+    background: linear-gradient(45deg, 
+        var(--rose-gold), 
+        var(--blush), 
+        var(--rose-gold), 
+        #8a3a43, 
+        var(--rose-gold));
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* Border Glow Animation */
+@keyframes borderGlow {
+    0%, 100% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+    50% {
+        filter: brightness(1.2);
+        transform: scale(1.02);
+    }
+}
+
+/* Premium Shadow Effects - EXCLUDE SCROLL GALLERY */
+.card img,
+#p-image,
+.rec-card img {
+    box-shadow: 
+        0 4px 20px rgba(114, 47, 55, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.8),
+        inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.card:hover img,
+.rec-card:hover img {
+    box-shadow: 
+        0 8px 30px rgba(114, 47, 55, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.9),
+        inset 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* Special Border for Featured Products */
+.featured .card img::before {
+    background: linear-gradient(45deg, 
+        var(--rose-gold), 
+        #b86b77, /* lighter blush */
+        var(--rose-gold), 
+        var(--text-dark), 
+        #8a3a43); /* darker rose-gold */
+    opacity: 0.9;
+}
+
+/* Luxury Frame Effect for Product Detail Images */
+#p-image {
+    padding: 8px;
+    background: linear-gradient(135deg, 
+        rgba(114, 47, 55, 0.1) 0%, 
+        rgba(165, 95, 107, 0.2) 50%, 
+        rgba(114, 47, 55, 0.1) 100%);
+    border-radius: 16px;
+}
+
+#p-image::before {
+    background: linear-gradient(135deg, 
+        var(--rose-gold), 
+        var(--blush), 
+        var(--rose-gold), 
+        var(--text-dark), 
+        var(--rose-gold),
+        var(--blush));
+    opacity: 0.9;
+}
+
+/* SCROLL GALLERY SPECIFIC STYLES - MATCHING WEBSITE COLORS */
+.scroll-track img {
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(45deg, var(--light-pink), var(--blush), var(--light-pink)) border-box;
+    border-radius: 18px;
+    padding: 3px;
+    box-shadow: 
+        0 6px 18px rgba(114, 47, 55, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.scroll-track img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(114, 47, 55, 0.2),
+        0 0 0 2px rgba(114, 47, 55, 0.5); /* rose-gold border */
+}
+
+/* Recommended Product Borders */
+.rec-card img {
+    border: 1.5px solid rgba(114, 47, 55, 0.3); /* rose-gold */
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.rec-card:hover img {
+    border-color: rgba(114, 47, 55, 0.6); /* rose-gold */
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Diamond Cut Border Effect - ONLY FOR CARDS */
+.card img {
+    clip-path: polygon(
+        0% 15%, 15% 0%, 85% 0%, 100% 15%, 
+        100% 85%, 85% 100%, 15% 100%, 0% 85%
+    );
+}
+
+.card img::before {
+    clip-path: polygon(
+        0% 15%, 15% 0%, 85% 0%, 100% 15%, 
+        100% 85%, 85% 100%, 15% 100%, 0% 85%
+    );
+}
+
+/* ===== END OF PREMIUM BORDER STYLES ===== */

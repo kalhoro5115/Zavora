@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zavora Jewelry | Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="logo.jpg">
+</head>
+
+<body data-page="products">
+  <!-- Add floating elements -->
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
+
+<header class="header" id="main-header">
+  <div class="logo">
+    <img src="logoo.png" alt="Zavora Icon" class="logo-icon">
+    <div class="brand">
+      <img src="brand.png" alt="Zavora Text Logo" class="brand-text">
+      <p>Jewelry • Where Light Meets Desire</p>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" title="Home"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="product.html" class="active" title="Products"><i class="fa-solid fa-gem"></i> Products</a>
+    <a href="contact.html" title="Contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h2>Our Signature Collection</h2>
+  <p>Every jewel whispers elegance — crafted for the timeless soul.</p>
+  <div class="grid-products" id="product-grid">
+    </div>
+</section>
+
+<section class="why fade-slide">
+  <h3>Exclusive Offers for Stall Visitors</h3>
+  <p>Enjoy up to 25% discount when you visit our jewelry stall at Isra University, Hyderabad.</p>
+</section>
+
+<footer>Zavora Jewelry · Authentic Elegance · © 2025</footer>
+
+<div class="whatsapp">
+  <a href="https://wa.me/923053401331" target="_blank">💬</a>
+</div>
+
+<script src="product.js"></script> 
+
+<script>
+// 1. GENERATE GRID FROM product.js DATA
+const grid = document.getElementById("product-grid");
+
+// Loop through the PRODUCTS object
+Object.keys(PRODUCTS).forEach(key => {
+  const item = PRODUCTS[key];
+  const card = document.createElement("a");
+  card.className = "card fade-slide";
+  // Crucial: Pass the ID (key) in the URL
+  card.href = `product-detail.html?id=${key}`; 
+  card.innerHTML = `
+    <img src="${item.img}" alt="${item.name}">
+    <h4>${item.name}</h4>
+    <p>${item.price} · ${item.off}</p>
+  `;
+  grid.appendChild(card);
+});
+
+// 2. ANIMATION OBSERVER
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
+
+// 3. FIX BLANK PAGE ISSUE (Show Body)
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+</script>
+
+</body>
+</html>
